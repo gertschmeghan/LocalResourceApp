@@ -7,9 +7,17 @@
 //
 
 import UIKit
+import Foundation
 
 class ResourcesTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var ResourceNameLabel: UILabel!
+    @IBOutlet weak var ResourceAddressLabel: UILabel!
+    
+    
+   
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,3 +32,4 @@ class ResourcesTableViewCell: UITableViewCell {
     }
 
 }
+

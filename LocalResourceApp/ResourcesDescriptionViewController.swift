@@ -7,17 +7,19 @@
 //
 
 import UIKit
+import Foundation
+import WebKit
 
 class ResourcesDescriptionViewController: UIViewController {
     
-    @IBOutlet weak var ResourceDescriptionText: UITextView!
     
     @IBOutlet weak var LocationMapButton: UIButton!
+    
     @IBAction func PressedButtonLocationMap(_ sender: Any) {
         
     }
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let button = LocationMapButton
@@ -26,10 +28,7 @@ class ResourcesDescriptionViewController: UIViewController {
         button?.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Medium", size: 20)
         button?.backgroundColor = .red
         button?.layer.cornerRadius = 5
-        
-        let textBox = ResourceDescriptionText
-        textBox?.isEditable = false
-
+   
         
         // Do any additional setup after loading the view.
     }
@@ -38,8 +37,5 @@ class ResourcesDescriptionViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    
 
 }

@@ -22,7 +22,15 @@ class ViewController: UIViewController {
                                  Resource(name: "Alachua County Health Department",
                                           address: "218 SE 24th StreetGainesville, FL 32641")]
     
-    
+    let resourceSegue = "showDescriptionSegue"
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == resourceSegue,
+            let destination = segue.destination as? ResourcesDescriptionViewController,
+            let descriptionIndex = ResourceTableView.indexPathForSelectedRow?.row
+        {
+//            destination.description = resources[descriptionIndex]
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,14 +51,19 @@ extension ViewController: UITableViewDataSource {
         
     }
     
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)as? ResourcesTableViewCell else {
             fatalError("Cannot access custom resource cell")
         }
         
-        
-      
+        cell.ResourceNameLabel!.text = resources[indexPath.row].name
+        cell.ResourceAddressLabel!.text = resources[indexPath.row].address
+//        cell.ResourceImage!.image = 
         return cell
     
+        }
+        
     }
-}
+
+
+

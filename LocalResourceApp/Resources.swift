@@ -7,13 +7,14 @@
 //
 
 import Foundation
+import UIKit
 
 class Resource {
     
     var name: String
     var address: String
     var image: String?
-    var description: String?
+    var description: UIWebView!
     init(name: String, address: String) {
         self.name = name
         self.address = address
